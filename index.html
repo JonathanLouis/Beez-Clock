@@ -1,0 +1,184 @@
+<html>
+
+<head>
+    <title> Beez clock </title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.26/moment-timezone-with-data.js"
+        integrity="sha256-ApGYAOWAAu0ri/a+Nu3eYtgVYzRjNpm2eyI3rdlPWqI=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body class="bodyimg" style=" text-align: center">
+    <div class="divclock">
+    <table style="width:100%; text-align: center; margin-top: 300px">
+        <tr style="color:white; text-align: left; font-family: 'Dosis' sans-serif; font-size: 25px">
+            <th id="cRica_name" style="font-family: 'Dosis'">COSTA RICA</th>
+            <th id="miami_name" style="font-family: 'Dosis'">MIAMI</th>
+            <th id="barc_name" style="font-family: 'Dosis'">BARCELONA</th>
+            <th id="ind_name" style="font-family: 'Dosis'">INDIA</th>
+        </tr>
+        <tr>
+            <div id="momentIndia" style="color:white" class="clock_container"></div>
+        </tr>
+        <tr>
+            <td>
+                <div id="cRicaTime"class="clock_container">
+                    <div id="cRica_hours" class="digit"></div>
+                    <div id="cRica_minutes" class="digit"></div>
+                    <div id="cRica_type" class="clock_type"></div>
+                    <div id="cRica_seconds" class="clock_seconds"></div>
+                </div>
+            </td>
+            <td>
+                <div id="miamiTime" class="clock_container">
+                    <div id="miami_hours" class="digit" ></div>
+                    <div id="miami_minutes" class="digit"></div>
+                    <div id="miami_type" class="clock_type" ></div>
+                    <div id="miami_seconds" class="clock_seconds"></div>
+                </div>
+            </td>
+            <td>
+                <div id="barcTime" class="clock_container">
+                    <div id="barc_hours" class="digit" ></div>
+                    <div id="barc_minutes" class="digit"></div>
+                    <div id="barc_type" class="clock_type" ></div>
+                    <div id="barc_seconds" class="clock_seconds"></div>
+                </div>
+            </td>
+            <td>
+                <div id="indTime" class="clock_container" >
+                    <div id="ind_hours" class="digit" ></div>
+                    <div id="ind_minutes" class="digit"></div>
+                    <div id="ind_type" class="clock_type"></div>
+                    <div id="ind_seconds" class="clock_seconds"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <script>
+
+        function beezTime() {
+
+            var ind = moment().tz("Asia/Kolkata");
+
+            var divHours = document.getElementById('ind_hours');
+            var divMinutes = document.getElementById('ind_minutes');
+            var divType = document.getElementById('ind_type');
+            var divSeconds = document.getElementById('ind_seconds');
+            var divInd = document.getElementById('indTime');
+            var divIndName = document.getElementById('ind_name')
+
+            divHours.innerHTML = ind.format('h:');
+            divMinutes.innerHTML = ind.format('mm');
+            divType.innerHTML = ind.format('A');
+            divSeconds.innerHTML = ind.format('ss');
+
+            if (divHours.innerHTML >= '12' && divType.innerHTML=== 'PM') {
+                divInd.style.color = '#ffd900';
+                divIndName.style.color ='#ffd900';
+                }
+                else {
+                    divInd.style.color = 'white';
+                    divIndName.style.color = 'white';
+                }
+            }
+
+
+        function miamiTime() {
+
+
+            var divHoursMiami = document.getElementById('miami_hours');
+            var divMinutesMiami = document.getElementById('miami_minutes');
+            var divTypeMiami = document.getElementById('miami_type');
+            var divSecondsMiami = document.getElementById('miami_seconds');
+            var divMiami = document.getElementById('miamiTime')
+            var divMiamiName = document.getElementById('miami_name')
+
+            var miami = moment().tz("America/Nassau")
+
+            divHoursMiami.innerHTML = miami.format('h:');
+            divMinutesMiami.innerHTML = miami.format('mm');
+            divTypeMiami.innerHTML = miami.format('A');
+            divSecondsMiami.innerHTML = miami.format('ss');
+
+            if (divHoursMiami.innerHTML >= '12' && divTypeMiami.innerHTML=== 'PM') {
+                divMiami.style.color = '#ffd900';
+                divMiamiName.style.color = '#ffd900'
+                }
+                else {
+                    divMiami.style.color = 'white';
+                    divMiamiName.style.color = 'white'
+                }
+            }
+
+
+
+        function cRicaTime() {
+            var divHoursCrica = document.getElementById('cRica_hours');
+            var divMinutesCrica = document.getElementById('cRica_minutes');
+            var divTypeCrica = document.getElementById('cRica_type')
+            var divSecondsCrica = document.getElementById('cRica_seconds');
+            var divCrica = document.getElementById('cRicaTime');
+            var divCricaName = document.getElementById('cRica_name');
+
+            var cRica = moment().tz("America/Costa_Rica")
+
+            divHoursCrica.innerHTML = cRica.format('h:');
+            divMinutesCrica.innerHTML = cRica.format('mm');
+            divTypeCrica.innerHTML = cRica.format('A')
+            divSecondsCrica.innerHTML = cRica.format('ss');
+
+            if (divHoursCrica.innerHTML >= '12' && divTypeCrica.innerHTML=== 'PM') {
+                divCrica.style.color = '#ffd900';
+                divCricaName.style.color = '#ffd900';
+                }
+                else {
+                    divCrica.style.color = 'white';
+                    divCricaName.style.color = 'white';
+                }
+            }
+
+
+
+        function barcTime() {
+            var divHoursBarc = document.getElementById('barc_hours');
+            var divMinutesBarc = document.getElementById('barc_minutes');
+            var divTypeBarc = document.getElementById('barc_type')
+            var divSecondsBarc = document.getElementById('barc_seconds');
+            var divBarc = document.getElementById('barcTime');
+            var divBarcName = document.getElementById('barc_name');
+
+            var barc = moment().tz("Europe/Madrid")
+
+            divHoursBarc.innerHTML = barc.format('h:');
+            divMinutesBarc.innerHTML = barc.format('mm');
+            divTypeBarc.innerHTML = barc.format('A')
+            divSecondsBarc.innerHTML = barc.format('ss');
+
+            if (divHoursBarc.innerHTML >= '12' && divTypeBarc.innerHTML=== 'PM') {
+                divBarc.style.color = '#ffd900';
+                divBarcName.style.color = '#ffd900';
+                }
+                else {
+                    divBarc.style.color = 'white';
+                    divBarcName.style.color = '#white';
+                }
+            }
+
+
+
+        setInterval(beezTime, 1000);
+        setInterval(miamiTime, 1000);
+        setInterval(cRicaTime, 1000);
+        setInterval(barcTime, 1000);
+
+    </script>
+
+</body>
+
+</html>

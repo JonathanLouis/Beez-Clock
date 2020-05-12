@@ -1,0 +1,44 @@
+.bodyimg {
+    /* background-image: url("lake.jpg"); */
+    background: #000000;
+    background-size: cover;
+}
+
+.divclock {
+    /* background: #ffd900; */
+    opacity: 0.8;
+    /* margin: -9px; */
+    height: 220px;
+}
+
+
+.clock_container {
+    font-size: 100px;
+    /* margin-top: 200px; */
+    color: white;
+    text-align: right;
+}
+
+.digit {
+    float: left;
+    font-family: 'Dosis', sans serif;
+}
+
+.digit_seconds {
+    float: left;
+    font-family: 'Dosis', sans serif;
+}
+.clock_seconds {
+    float: left;
+    font-family: 'Dosis', sans serif;
+    font-size: 30px;
+    margin-left: -42px;
+    margin-top: 21px;
+}
+
+.clock_type {
+    float: left;
+    font-family: 'Dosis', sans serif;
+    font-size: 50px;
+    margin-top: 50px;
+}
