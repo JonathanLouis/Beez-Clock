@@ -1,4 +1,4 @@
 # Beez-Clock
 Clocks for different timezones
 
-http://www.beezclock.netlify.app
+https://beezclock.netlify.app/
